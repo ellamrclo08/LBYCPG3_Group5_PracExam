@@ -1,0 +1,377 @@
+/* Navbar */
+.navbar {
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #153d01;
+    z-index: 9999; 
+}
+
+/* School Logo */
+.school-logo {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Carousel */
+.carousel {
+    width: 100%;
+}
+
+/* Left Sidebar */
+.sidebar {
+    padding-top: 10px; /* Adjust the top padding to make room for the fixed navbar */
+    padding-bottom: 20px;
+    background-color: #f5f4e9;
+    min-width: 240px; /* Set a minimum width for the sidebar */
+    overflow-y: auto; /* Enable vertical scrolling for the sidebar */
+    flex: 0 0 240px;
+}
+
+/* Adjust sidebar width and color as needed */
+@media (max-width: 5000px) {
+    .sidebar {
+        position: static;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        flex: 0 0 auto;
+    }
+}
+
+.sidebar a.nav-link {
+    color: green;
+    transition: color 0.3s;
+}
+
+/* Change the font color of active links in the sidebar to red */
+.sidebar a.nav-link.active {
+    color: black;
+}
+
+.sidebar a.nav-link:hover {
+    color: #2392db;
+}
+
+.sidebar a.standard {
+    color: green;
+    margin: 15px;
+}
+
+.sidebar ul {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+
+/* Right Content Area */
+main {
+    padding-top: 10px;
+    flex: 1;
+    background-color: #f0efd5;
+}
+
+.content {
+    padding-top: 0;
+    font-family: Arial, sans-serif; /* Change the font family */
+    font-size: 16px; /* Change the font size */
+    line-height: 1.6; /* Adjust the line height for better readability */
+    color: #333; /* Change the text color */
+}
+
+.content h1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #277500;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.content h2 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #277500;
+  margin-bottom: 10px;
+}
+
+.content h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #277500;
+}
+
+.content h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #277500;
+}
+
+/* Add some margin for paragraphs */
+.content p {
+    margin-top: 16px;
+    margin-bottom: 15px;
+}
+
+/* Format links in the content area */
+.content a {
+  color: #007bff; /* Change link color */
+  text-decoration: underline; /* Add underline to links */
+}
+
+.content a:hover {
+  color: #0056b3; /* Change link color on hover */
+}
+
+.content .image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.content .image-container .animateimg {
+    max-width: 150px; /* Set the initial width for the images */
+    border: 10px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.2s linear; /* Add transition for smooth scaling */
+}
+
+.content .image-container .animateimg #large-image {
+    max-width: 300px; /* Adjust the size to your preferred larger width */
+    /* You can also set max-height if needed */
+}
+
+
+.content .image-container .animateimg img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.content .image-container .animateimg:hover {
+    max-width: 200px; /* Set the increased width for the images on hover */
+}
+
+.image-container-nform {
+    display: flex; /* Set the container as a flexbox */
+    /* display: inline-block; */ /* Alternatively, set the container as an inline-block */
+    justify-content: space-between; /* Adjust the space between the images */
+    /* justify-content: center; */ /* Use this to center the images horizontally */
+}
+
+/* Optional styling for the images */
+.image-container-nform img {
+    width: 100%; /* Set the width of the images */
+    height: auto; /* Keep the aspect ratio */
+    margin: 5px; /* Add spacing between the images */
+}
+
+.content .popup-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    display: none;
+}
+
+.content .popup-img span {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 60px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.content .popup-img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid white;
+    border-radius: 5px;
+    max-width: 90%; /* Adjust the max-width for images in the popup */
+    max-height: 90%; /* Adjust the max-height for images in the popup */
+    object-fit: contain; /* Use 'contain' to maintain image ratio */
+}
+
+@media (max-width: 768px) {
+    .content .popup-img img {
+        width: 95%;
+        max-width: 95%; /* Adjust the max-width for images in the popup for smaller screens */
+        max-height: 90%; /* Adjust the max-height for images in the popup for smaller screens */
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.faculty-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.faculty-card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faculty-card img {
+    width: 80%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.faculty-card h2 {
+    margin: 10px 0;
+}
+
+.faculty-card p {
+    margin: 5px 0;
+}
+
+/* Optional hover effect */
+.faculty-card a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.faculty-card a:hover {
+    color: #007bff;
+}
+
+
+
+.container-fluid {
+    display: block;
+}
+
+div.row{
+    overflow-x: hidden;
+}
+
+.original table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.original th, td, tr {
+    padding: 8px;
+    border: 1px dotted black;
+}
+
+.original th:first-child,
+.original td:first-child {
+        width: 30%; /* Adjust the width as needed */
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.cmaptable table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.cmaptable th,
+.cmaptable tr,
+.cmaptable td {
+    padding: 8px;
+    border: 0.5px dotted black;
+}
+
+.cmaptable th:first-child,
+.cmaptable td:first-child {
+    width: 3%;
+}
+
+.gradtable1 table {
+    border-collapse: collapse;
+    width: 70%;
+}
+
+.gradtable1 th,
+.gradtable1 tr,
+.gradtable1 td {
+    padding: 8px;
+    border: 0.25px dotted black;
+}
+
+.gradtable1 td:nth-child(2) {
+    width: 10%;
+}
+
+.gradtable2 th,
+.gradtable2 tr,
+.gradtable2 td {
+    border: 0.25px dotted black;
+}
+
+.gradtable2 table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.gradtable2 th:first-child,
+.gradtable2 td:first-child {
+    width: 12%;
+}
+
+.gradtable2 th:nth-child(2),
+.gradtable2 td:nth-child(2) {
+    width: 20%;
+}
+
+.org-chart {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.person {
+  text-align: center;
+}
+
+.person img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.position {
+  color: #888;
+}
+
+/* You can add more styles to customize the look of the organizational chart */
